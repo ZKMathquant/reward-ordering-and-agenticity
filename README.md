@@ -25,6 +25,7 @@ source venv/bin/activate  # On Windows: venv\Scripts\activate
 pip install -r requirements.txt
 
 # Run experiments
+python -m experiments.generate_policy_reward_table
 python -m experiments.orderability_frozenlake
 python -m experiments.orderability_taxi
 python -m experiments.agenticity_metrics
@@ -112,21 +113,21 @@ Conclusion:
 Visual Evidence
 Policy rankings under affine reward transforms $(α, β)$:
 
-(artificial data,will replace with locally developed one soon)
 
 Transform    | π_random | π_always_0 | π_always_1 | Ordering
 -------------|----------|------------|------------|----------
-(1.0, 0.0)   |   0.42   |    0.15    |    0.38    | 0 < 1 < R
-(2.0, 0.0)   |   0.84   |    0.30    |    0.76    | 0 < 1 < R
-(0.5, 1.0)   |   1.21   |    1.08    |    1.19    | 0 < 1 ~~ R
-(-1.0, 2.0)  |   1.58   |    1.85    |    1.62    | R < 1 < 0   <- FLIPPED
+( 1.0,  0.0) |     0.02 |       0.00 |       0.05 | 0 < R < 1
+( 2.0,  0.0) |     0.04 |       0.00 |       0.10 | 0 < R < 1
+( 0.5,  1.0) |     7.63 |      17.61 |       5.38 | 1 < R < 0 ← FLIPPED
+(-1.0,  2.0) |    15.84 |      35.09 |      10.63 | 1 < R < 0 ← FLIPPED
 
 
 
 Observation: The ordering reverses under negative scaling. This demonstrates that no single reward function can enforce a strict order across all transforms.
 
-Repository Structure
+# Repository Structure
 
+```
 reward-ordering-and-agents/
 ├── README.md
 ├── requirements.txt
@@ -146,7 +147,7 @@ reward-ordering-and-agents/
 │   └── stress_test.py
 └── tests/
     └── test_claims.py
-
+```
 Significance
 This work establishes:
 Impossibility result: Reward functions cannot always order policies (Claim 1)
