@@ -134,19 +134,28 @@ reward-ordering-and-agents/
 ├── data/
 │   └── environments.md
 ├── mdp/
+│   ├── __init__.py
 │   ├── envs.py
 │   ├── evaluation.py
 │   └── policies.py
 ├── rewards/
+│   ├── __init__.py
 │   ├── reward_families.py
 │   └── wrappers.py
 ├── experiments/
+│   ├── __init__.py
 │   ├── orderability_frozenlake.py
 │   ├── orderability_taxi.py
 │   ├── agenticity_metrics.py
+│   ├── generate_policy_reward_table.py
 │   └── stress_test.py
+├── theory/
+│   ├── policy_math.md
+│   └── experimental_validation.md
 └── tests/
+    ├── __init__.py
     └── test_claims.py
+
 ```
 Significance
 This work establishes:
