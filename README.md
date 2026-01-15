@@ -32,7 +32,7 @@ python -m experiments.stress_test
 
 # Run tests
 pytest
-
+```
 
 Theoretical Foundation
 1. The Impossibility of Universal Orderability (Claim 1)
